@@ -29,7 +29,7 @@ function CountryDetails({ countriesData }) {
                 <tr>
                   <td>Area</td>
                   <td>
-                    551695 km
+                    {foundCountry.area} km
                     <sup>2</sup>
                   </td>
                 </tr>
