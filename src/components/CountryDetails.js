@@ -18,6 +18,11 @@ function CountryDetails({ countriesData }) {
       {foundCountry && (
         <>
           <div>
+            <img
+              src={`https://flagpedia.net/data/flags/icon/72x54/${foundCountry.alpha2Code.toLowerCase()}.png`}
+              alt=""
+              className="m-2"
+            />
             <h1>{foundCountry.name.common}</h1>
             <table className="table">
               <thead></thead>
