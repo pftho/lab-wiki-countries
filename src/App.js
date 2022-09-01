@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     axios.get(api).then((response) => {
       setData(response.data);
+      console.log(response.data);
       setFetching(false);
     });
   }, []);
