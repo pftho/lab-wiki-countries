@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 function CountryDetails({ countriesData }) {
   const { id } = useParams();
@@ -13,10 +14,10 @@ function CountryDetails({ countriesData }) {
 
   console.log(foundCountry);
   return (
-    <div>
+    <div className="col-7">
       {foundCountry && (
         <>
-          <div className="col-7">
+          <div>
             <h1>{foundCountry.name.common}</h1>
             <table className="table">
               <thead></thead>
@@ -38,11 +39,10 @@ function CountryDetails({ countriesData }) {
                     <ul>
                       {foundCountry.borders.map((borderCode) => {
                         return (
-                          <li>
+                          <li key={uuidv4()}>
                             <Link to={`/${borderCode}`}>
                               {countriesData.map((country) => {
                                 if (country.alpha3Code === borderCode) {
-                                  console.log(country.name.common);
                                   return country.name.common;
                                 }
                               })}
